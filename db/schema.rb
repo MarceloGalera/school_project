@@ -12,9 +12,9 @@
 
 ActiveRecord::Schema[7.1].define(version: 2023_11_15_184434) do
   create_table "students", force: :cascade do |t|
-    t.string "name"
-    t.integer "age"
-    t.integer "year"
+    t.string "name", limit: 50, null: false
+    t.integer "age", limit: 2, null: false
+    t.integer "year", limit: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
