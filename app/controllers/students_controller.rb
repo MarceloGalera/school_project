@@ -3,7 +3,11 @@ class StudentsController < ApplicationController
 
   # GET /students or /students.json
   def index
-    @students = Student.all
+    /@students = Student.all/
+    /@students = Student.all.find_by_first_letter(params[:letter])/ # don't know how it works!
+    /@students = Student.order('name ASC') # sorting in ascending order/
+    @students = Student.order(year: :asc, name: :asc) # sorting in ascending order, first by year, then by name
+    # guide: https://guides.rubyonrails.org/active_record_querying.html#ordering
   end
 
   # GET /students/1 or /students/1.json
